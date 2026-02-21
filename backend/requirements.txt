@@ -1,2 +1,12 @@
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
+fastapi
+uvicorn[standard]
+motor
+pymongo
+pydantic
+pydantic-settings
+python-dotenv
+passlib[bcrypt]
+langchain
+langchain-google-genai
+google-generativeai
+python-multipart
