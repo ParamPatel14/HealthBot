@@ -1,36 +1,36 @@
 /* ===== HAL DESIGN SYSTEM ===== */
 :root {
-  --bg-primary: #0a0a1a;
-  --bg-secondary: #111127;
-  --bg-tertiary: #1a1a3e;
-  --bg-card: rgba(25, 25, 60, 0.6);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --bg-glass-hover: rgba(255, 255, 255, 0.08);
-  --bg-input: rgba(255, 255, 255, 0.06);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(0, 212, 170, 0.4);
-  --text-primary: #f0f0f5;
-  --text-secondary: #a0a0c0;
-  --text-muted: #606080;
-  --accent: #00d4aa;
-  --accent-light: #00f5c8;
-  --accent-glow: rgba(0, 212, 170, 0.25);
-  --accent-secondary: #6c63ff;
-  --accent-secondary-glow: rgba(108, 99, 255, 0.25);
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --success: #10b981;
-  --info: #3b82f6;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 30px var(--accent-glow);
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-primary: #050513;
+  --bg-secondary: #0c0c22;
+  --bg-tertiary: #151532;
+  --bg-card: rgba(25, 25, 60, 0.75);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover: rgba(255, 255, 255, 0.1);
+  --bg-input: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-active: rgba(0, 212, 170, 0.5);
+  --text-primary: #f7f7ff;
+  --text-secondary: #b0b0d0;
+  --text-muted: #707090;
+  --accent: #00f0b5;
+  --accent-light: #34ffd0;
+  --accent-glow: rgba(0, 240, 181, 0.35);
+  --accent-secondary: #7b6cff;
+  --accent-secondary-glow: rgba(123, 108, 255, 0.35);
+  --warning: #fbbf24;
+  --error: #f87171;
+  --success: #34d399;
+  --info: #60a5fa;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 26px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 40px var(--accent-glow);
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 *,
@@ -47,11 +47,12 @@ html {
 
 body {
   font-family: var(--font);
-  background: var(--bg-primary);
+  background: radial-gradient(circle at top, #141430 0, #050513 55%, #02010a 100%);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 a {
@@ -112,17 +113,19 @@ select {
   border-radius: var(--radius-md);
   padding: 24px;
   transition: var(--transition);
+  transform: translateY(0) scale(1);
 }
 
 .glass-card:hover {
   border-color: var(--border-active);
   box-shadow: var(--shadow-glow);
+  transform: translateY(-4px) scale(1.01);
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .text-center {
@@ -143,36 +146,36 @@ select {
 
 /* ===== TYPOGRAPHY ===== */
 h1 {
-  font-size: 2.8rem;
+  font-size: clamp(3rem, 4vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 3vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
   font-weight: 600;
   line-height: 1.3;
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 .text-sm {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .text-xs {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .text-muted {
@@ -371,11 +374,12 @@ select.form-input {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 0 24px;
-  height: 64px;
-  background: rgba(10, 10, 26, 0.85);
-  backdrop-filter: blur(20px);
+  padding: 0 32px;
+  height: 72px;
+  background: radial-gradient(circle at top left, rgba(0, 240, 181, 0.12), transparent 55%) rgba(10, 10, 26, 0.9);
+  backdrop-filter: blur(26px);
   border-bottom: 1px solid var(--border-glass);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -384,49 +388,72 @@ select.form-input {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
 }
 
 .navbar-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--bg-primary);
 }
 
 .navbar-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .navbar-link {
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   transition: var(--transition);
   text-decoration: none;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .navbar-link:hover,
 .navbar-link.active {
   color: var(--accent);
   background: var(--bg-glass);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .navbar-actions {
@@ -436,8 +463,8 @@ select.form-input {
 }
 
 .navbar-avatar {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
   background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
@@ -599,7 +626,7 @@ select.form-input {
 
 /* ===== LANDING PAGE ===== */
 .landing-hero {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -645,10 +672,10 @@ select.form-input {
 
 .hero-content {
   text-align: center;
-  max-width: 800px;
+  max-width: 920px;
   position: relative;
   z-index: 1;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .hero-badge {
@@ -669,7 +696,7 @@ select.form-input {
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
   margin-bottom: 36px;
   max-width: 600px;
@@ -683,8 +710,16 @@ select.form-input {
   flex-wrap: wrap;
 }
 
+.hero-actions .btn-primary {
+  box-shadow: 0 0 0 0 var(--accent-glow), var(--shadow-md);
+}
+
+.hero-actions .btn-primary:hover {
+  box-shadow: 0 0 0 10px transparent, var(--shadow-glow);
+}
+
 .features-section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .features-grid {
@@ -695,7 +730,7 @@ select.form-input {
 }
 
 .feature-card {
-  padding: 32px;
+  padding: 36px;
   text-align: center;
 }
 
@@ -722,7 +757,7 @@ select.form-input {
 }
 
 .how-it-works {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .steps-grid {
